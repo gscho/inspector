@@ -1,0 +1,2 @@
+class TestPlan < ApplicationRecord
+end

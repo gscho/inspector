@@ -1,0 +1,42 @@
+<%= form_with(model: test_plan, local: true) do |form| %>
+  <% if test_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(test_plan.errors.count, "error") %> prohibited this test_plan from being saved:</h2>
+
+      <ul>
+      <% test_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :test_plan_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target %>
+    <%= form.text_field :target, id: :test_plan_target %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :test_plan_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :test_plan_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filepath %>
+    <%= form.text_field :filepath, id: :test_plan_filepath %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

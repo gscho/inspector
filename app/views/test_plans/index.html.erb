@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Test Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Target</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Filepath</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_plans.each do |test_plan| %>
+      <tr>
+        <td><%= test_plan.name %></td>
+        <td><%= test_plan.target %></td>
+        <td><%= test_plan.username %></td>
+        <td><%= test_plan.password %></td>
+        <td><%= test_plan.filepath %></td>
+        <td><%= link_to 'Show', test_plan %></td>
+        <td><%= link_to 'Edit', edit_test_plan_path(test_plan) %></td>
+        <td><%= link_to 'Destroy', test_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test Plan', new_test_plan_path %>
