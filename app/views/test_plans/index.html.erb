@@ -25,6 +25,7 @@
         <td><%= link_to 'Show', test_plan %></td>
         <td><%= link_to 'Edit', edit_test_plan_path(test_plan) %></td>
         <td><%= link_to 'Destroy', test_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Execute', :action => "execute", :id => test_plan.id %></td>
       </tr>
     <% end %>
   </tbody>

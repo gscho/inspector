@@ -1,5 +1,5 @@
 class TestPlansController < ApplicationController
-  before_action :set_test_plan, only: [:show, :edit, :update, :destroy]
+  before_action :set_test_plan, only: [:show, :edit, :update, :destroy, :execute]
 
   # GET /test_plans
   # GET /test_plans.json
@@ -19,6 +19,11 @@ class TestPlansController < ApplicationController
 
   # GET /test_plans/1/edit
   def edit
+  end
+
+  # GET /test_plans/1/execute
+  def execute
+    sleep 2
   end
 
   # POST /test_plans
