@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/gscho/inspector.png)](https://travis-ci.org/gscho/inspector) 
 # README
 
 This README would normally document whatever steps are necessary to get the
