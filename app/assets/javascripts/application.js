@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require nprogress
 //= require nprogress-turbolinks
+//= require bootstrap-sprockets
+//= require_tree .
