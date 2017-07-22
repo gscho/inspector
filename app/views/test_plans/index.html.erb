@@ -1,31 +1,37 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Test Plans</h1>
 
-<table>
+<table class="table table-hover table-inverse">
   <thead>
     <tr>
+      <th>#</th>
       <th>Name</th>
       <th>Target</th>
       <th>Username</th>
       <th>Password</th>
       <th>Filepath</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <!-- <th></th> -->
     </tr>
   </thead>
 
   <tbody>
-    <% @test_plans.each do |test_plan| %>
+    <% @test_plans.each_with_index do |test_plan, index| %>
       <tr>
+        <th scope="row"><%= index+1 %></th>
         <td><%= test_plan.name %></td>
         <td><%= test_plan.target %></td>
         <td><%= test_plan.username %></td>
         <td><%= test_plan.password %></td>
         <td><%= test_plan.filepath %></td>
-        <td><%= link_to 'Show', test_plan %></td>
-        <td><%= link_to 'Edit', edit_test_plan_path(test_plan) %></td>
-        <td><%= link_to 'Destroy', test_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Execute', :action => "execute", :id => test_plan.id %></td>
+        <!-- <td><%= link_to 'Show', test_plan %></td> -->
+        <td><strong><%= link_to 'Edit', edit_test_plan_path(test_plan) %></strong></td>
+        <td><strong><%= link_to 'Destroy', test_plan, method: :delete, data: { confirm: 'Are you sure?' } %></strong></td>
+        <td><strong><%= link_to 'Execute', :action => "execute", :id => test_plan.id %></strong></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,3 +40,4 @@
 <br>
 
 <%= link_to 'New Test Plan', new_test_plan_path %>
+
