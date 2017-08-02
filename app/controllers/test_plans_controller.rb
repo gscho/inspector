@@ -1,3 +1,6 @@
+require 'net/http'
+require 'uri'
+
 class TestPlansController < ApplicationController
   before_action :set_test_plan, only: [:show, :edit, :update, :destroy, :execute]
 
@@ -23,7 +26,7 @@ class TestPlansController < ApplicationController
 
   # GET /test_plans/1/execute
   def execute
-    sleep 2
+
   end
 
   # POST /test_plans
