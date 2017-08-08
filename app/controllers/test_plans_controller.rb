@@ -26,7 +26,8 @@ class TestPlansController < ApplicationController
 
   # GET /test_plans/1/execute
   def execute
-
+    color = (params[:id] == '1') ? '#5cb85c' : '#d9534f'
+    render js: "$('tr.table-row##{params[:id]}').effect('highlight', {color:'#{color}'}, 4000)"
   end
 
   # POST /test_plans

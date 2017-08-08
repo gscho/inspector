@@ -18,14 +18,14 @@
 
   <tbody>
     <% @test_plans.each_with_index do |test_plan, index| %>
-      <tr>
+      <tr class="table-row" id=<%=test_plan.id %>>
         <th scope="row"><%= index+1 %></th>
         <td><%= test_plan.name %></td>
         <td><%= test_plan.target %></td>
         <td></td>
-        <td><strong><%= link_to 'Edit', edit_test_plan_path(test_plan) %></strong></td>
-        <td><strong><%= link_to 'Destroy', test_plan, method: :delete, data: { confirm: 'Are you sure?' } %></strong></td>
-        <td><strong><%= link_to 'Execute', :action => "execute", :id => test_plan.id %></strong></td>
+        <td><%= link_to 'Edit', edit_test_plan_path(test_plan) %></td>
+        <td><%= link_to 'Destroy', test_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Execute', { :action => "execute", :id => test_plan.id, :remote => true }, { class: 'execute-button' }%></td>
       </tr>
     <% end %>
   </tbody>
